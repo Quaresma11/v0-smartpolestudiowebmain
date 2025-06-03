@@ -11,8 +11,8 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="relative bg-black text-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-transparent to-yellow-600/5"></div>
+    <section id="home" className="relative bg-gray-900 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/15 via-transparent to-yellow-600/10"></div>
 
       <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -70,7 +70,7 @@ const Hero = () => {
 
           <div className="relative">
             <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/10 rounded-3xl p-8 backdrop-blur-sm border border-yellow-400/20">
-              <div className="aspect-square bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl flex items-center justify-center">
+              <div className="aspect-square bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Star className="w-12 h-12 text-black" />
