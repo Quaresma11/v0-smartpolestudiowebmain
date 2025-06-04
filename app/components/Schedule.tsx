@@ -1,40 +1,8 @@
 "use client"
 
-import { useEffect } from "react"
 import { Calendar, Clock, Users } from "lucide-react"
 
 const Schedule = () => {
-  useEffect(() => {
-    // Проверяем, не загружен ли уже скрипт
-    if (!document.getElementById("aeWidgetScript")) {
-      const script = document.createElement("script")
-      script.id = "aeWidgetScript"
-      script.type = "text/javascript"
-      script.src = "//appevent.ru/widgets/widgethandle.min.js?widget_key=e217277e3679060b3767998e9fae937a"
-      script.async = true
-      script.charset = "UTF-8"
-
-      // Добавляем скрипт в head (или можно в body)
-      document.head.appendChild(script)
-
-      script.onload = () => {
-        console.log("Виджет AppEvent загружен")
-      }
-
-      script.onerror = () => {
-        console.error("Ошибка загрузки виджета AppEvent")
-      }
-    }
-
-    return () => {
-      // Очищаем скрипт при размонтировании компонента
-      const existingScript = document.getElementById("aeWidgetScript")
-      if (existingScript) {
-        existingScript.remove()
-      }
-    }
-  }, [])
-
   const scrollToContact = () => {
     const element = document.getElementById("contact")
     if (element) {
@@ -58,16 +26,16 @@ const Schedule = () => {
         {/* Контейнер для виджета CRM */}
         <div className="max-w-6xl mx-auto">
           <div className="bg-gray-900 rounded-2xl p-8 border border-yellow-400/20 shadow-2xl">
-            <div className="bg-white rounded-xl overflow-hidden min-h-[600px] p-4">
-              {/* Здесь автоматически появится виджет AppEvent */}
-              <div className="text-center py-8">
-                <div className="animate-pulse">
-                  <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-4"></div>
-                  <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
-                  <div className="h-4 bg-gray-200 rounded w-2/3 mx-auto"></div>
-                </div>
-                <p className="text-gray-500 mt-4 text-sm">Загружается система записи...</p>
-              </div>
+            <div className="bg-white rounded-xl overflow-hidden">
+              {/* Виджет через iframe */}
+              <iframe
+                className="aeCustomWidget w-full"
+                src="//appevent.ru/widget/embeded?widget_key=0e19a6a4ee97bfa48ce41bd1cc471f2d&hall_id=6677"
+                width="100%"
+                height="1120px"
+                style={{ background: "#ffffff", border: "none" }}
+                title="Система записи Smart Pole"
+              />
             </div>
           </div>
         </div>
