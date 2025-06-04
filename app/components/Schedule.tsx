@@ -5,17 +5,25 @@ import { Calendar, Clock, Users } from "lucide-react"
 
 const Schedule = () => {
   useEffect(() => {
-    // Загружаем скрипт виджета CRM системы
-    const script = document.createElement("script")
-    script.id = "aeWidgetScript"
-    script.type = "text/javascript"
-    script.src = "//appevent.ru/widgets/widgethandle.min.js?widget_key=e217277e3679060b3767998e9fae937a"
-    script.async = true
-    script.charset = "UTF-8"
-
     // Проверяем, не загружен ли уже скрипт
     if (!document.getElementById("aeWidgetScript")) {
+      const script = document.createElement("script")
+      script.id = "aeWidgetScript"
+      script.type = "text/javascript"
+      script.src = "//appevent.ru/widgets/widgethandle.min.js?widget_key=e217277e3679060b3767998e9fae937a"
+      script.async = true
+      script.charset = "UTF-8"
+
+      // Добавляем скрипт в head (или можно в body)
       document.head.appendChild(script)
+
+      script.onload = () => {
+        console.log("Виджет AppEvent загружен")
+      }
+
+      script.onerror = () => {
+        console.error("Ошибка загрузки виджета AppEvent")
+      }
     }
 
     return () => {
@@ -47,19 +55,18 @@ const Schedule = () => {
           </p>
         </div>
 
-        {/* Контейнер для виджета CRM с стилизацией */}
+        {/* Контейнер для виджета CRM */}
         <div className="max-w-6xl mx-auto">
           <div className="bg-gray-900 rounded-2xl p-8 border border-yellow-400/20 shadow-2xl">
-            <div className="bg-white rounded-xl overflow-hidden">
-              {/* Здесь будет загружен виджет CRM системы */}
-              <div id="ae-widget-container" className="min-h-[600px] w-full">
-                {/* Заглушка пока загружается виджет */}
-                <div className="flex items-center justify-center h-[600px] bg-gray-50">
-                  <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-400 mx-auto mb-4"></div>
-                    <p className="text-gray-600">Загружается система записи...</p>
-                  </div>
+            <div className="bg-white rounded-xl overflow-hidden min-h-[600px] p-4">
+              {/* Здесь автоматически появится виджет AppEvent */}
+              <div className="text-center py-8">
+                <div className="animate-pulse">
+                  <div className="h-4 bg-gray-200 rounded w-3/4 mx-auto mb-4"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto mb-4"></div>
+                  <div className="h-4 bg-gray-200 rounded w-2/3 mx-auto"></div>
                 </div>
+                <p className="text-gray-500 mt-4 text-sm">Загружается система записи...</p>
               </div>
             </div>
           </div>
@@ -96,11 +103,30 @@ const Schedule = () => {
           </div>
         </div>
 
-        {/* Дополнительная информация */}
+        {/* Альтернативные способы записи */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-600/5 p-8 rounded-2xl border border-yellow-400/20 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-yellow-400">Важная информация</h3>
-            <div className="grid md:grid-cols-2 gap-6 text-left">
+            <h3 className="text-2xl font-bold mb-4 text-yellow-400">Альтернативные способы записи</h3>
+            <p className="text-gray-300 mb-6">
+              Если система записи недоступна, вы всегда можете записаться на занятия по телефону или через форму
+              обратной связи
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:+79991234567"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
+              >
+                Позвонить: +7 (999) 123-45-67
+              </a>
+              <button
+                onClick={scrollToContact}
+                className="border-2 border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all"
+              >
+                Форма обратной связи
+              </button>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 text-left mt-8">
               <div>
                 <h4 className="font-semibold mb-2 text-white">Правила записи:</h4>
                 <ul className="space-y-1 text-gray-300 text-sm">
@@ -119,17 +145,6 @@ const Schedule = () => {
                   <li>• Хорошее настроение!</li>
                 </ul>
               </div>
-            </div>
-            <div className="mt-6 pt-6 border-t border-yellow-400/20">
-              <p className="text-gray-300 text-sm">
-                Возникли вопросы с записью? Свяжитесь с нами по телефону или через форму обратной связи
-              </p>
-              <button
-                onClick={scrollToContact}
-                className="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
-              >
-                Связаться с нами
-              </button>
             </div>
           </div>
         </div>
