@@ -63,7 +63,13 @@ const Services = () => {
   const scrollToContact = () => {
     const element = document.getElementById("contact")
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      const headerHeight = 120 // Высота хедера
+      const elementPosition = element.offsetTop - headerHeight
+
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      })
     }
   }
 

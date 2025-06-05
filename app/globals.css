@@ -61,3 +61,37 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Исправление для фиксированного хедера при переходах по якорным ссылкам */
+section[id] {
+  scroll-margin-top: 120px; /* Высота хедера + небольшой отступ */
+}
+
+/* Альтернативный способ для лучшей совместимости */
+#about,
+#services,
+#trainers,
+#schedule,
+#contact {
+  scroll-margin-top: 120px;
+}
+
+/* Плавная прокрутка для всех элементов */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Дополнительная настройка для мобильных устройств */
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 100px; /* Меньший отступ для мобильных */
+  }
+
+  #about,
+  #services,
+  #trainers,
+  #schedule,
+  #contact {
+    scroll-margin-top: 100px;
+  }
+}
