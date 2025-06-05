@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Основные страницы
+Allow: /#about
+Allow: /#services
+Allow: /#trainers
+Allow: /#schedule
+Allow: /#contact
+
+# Статические ресурсы
+Allow: /images/
+Allow: /favicon.ico
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap
+Sitemap: https://smartpole.ru/sitemap.xml
+
+# Специальные директивы для Yandex
+User-agent: Yandex
+Allow: /
+
+# Специальные директивы для Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Запрещаем индексацию служебных файлов
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json
