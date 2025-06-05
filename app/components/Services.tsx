@@ -74,81 +74,84 @@ const Services = () => {
   }
 
   return (
-    <section id="services" className="py-20 bg-black text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Наши <span className="text-yellow-400">услуги</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Выберите программу, которая подходит именно вам. От первых шагов в pole sport до мастерского уровня — у нас
-            есть всё для вашего развития
-          </p>
-        </div>
+    <section id="services" className="relative py-20 bg-gray-900 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/15 via-transparent to-yellow-600/10"></div>
+      <div className="relative z-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Наши <span className="text-yellow-400">услуги</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Выберите программу, которая подходит именно вам. От первых шагов в pole sport до мастерского уровня — у
+              нас есть всё для вашего развития
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl overflow-hidden border border-yellow-400/20 hover:border-yellow-400/40 transition-all group hover:transform hover:scale-105 shadow-lg"
-            >
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <service.icon className="w-6 h-6 text-black" />
-                  </div>
-                  <span className="bg-yellow-400/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold">
-                    {service.level}
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-bold mb-3 text-yellow-400">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center space-x-2">
-                      <Clock className="w-4 h-4 text-yellow-400" />
-                      <span className="text-gray-600">Длительность:</span>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl overflow-hidden border border-yellow-400/20 hover:border-yellow-400/40 transition-all group hover:transform hover:scale-105 shadow-lg"
+              >
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <service.icon className="w-6 h-6 text-black" />
                     </div>
-                    <span className="text-gray-900 font-semibold">{service.duration}</span>
+                    <span className="bg-yellow-400/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold">
+                      {service.level}
+                    </span>
                   </div>
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center space-x-2">
-                      <Users className="w-4 h-4 text-yellow-400" />
-                      <span className="text-gray-600">Группа:</span>
-                    </div>
-                    <span className="text-gray-900 font-semibold">{service.maxStudents}</span>
-                  </div>
-                </div>
 
-                <div className="flex items-center justify-between">
-                  <div className="text-2xl font-bold text-yellow-400">{service.price}</div>
-                  <button
-                    onClick={scrollToContact}
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
-                  >
-                    Записаться
-                  </button>
+                  <h3 className="text-xl font-bold mb-3 text-yellow-400">{service.title}</h3>
+                  <p className="text-gray-600 mb-6">{service.description}</p>
+
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center justify-between text-sm">
+                      <div className="flex items-center space-x-2">
+                        <Clock className="w-4 h-4 text-yellow-400" />
+                        <span className="text-gray-600">Длительность:</span>
+                      </div>
+                      <span className="text-gray-900 font-semibold">{service.duration}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                      <div className="flex items-center space-x-2">
+                        <Users className="w-4 h-4 text-yellow-400" />
+                        <span className="text-gray-600">Группа:</span>
+                      </div>
+                      <span className="text-gray-900 font-semibold">{service.maxStudents}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div className="text-2xl font-bold text-yellow-400">{service.price}</div>
+                    <button
+                      onClick={scrollToContact}
+                      className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
+                    >
+                      Записаться
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-600/5 p-8 rounded-2xl border border-yellow-400/20 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 text-yellow-400">Пробное занятие</h3>
-            <p className="text-gray-300 mb-6">
-              Не знаете, с чего начать? Приходите на бесплатное пробное занятие! Мы поможем определить ваш уровень и
-              подберем подходящую программу.
-            </p>
-            <button
-              onClick={scrollToContact}
-              className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-3 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
-            >
-              Записаться на пробное занятие
-            </button>
+          <div className="mt-16 text-center">
+            <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-600/5 p-8 rounded-2xl border border-yellow-400/20 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4 text-yellow-400">Пробное занятие</h3>
+              <p className="text-gray-300 mb-6">
+                Не знаете, с чего начать? Приходите на бесплатное пробное занятие! Мы поможем определить ваш уровень и
+                подберем подходящую программу.
+              </p>
+              <button
+                onClick={scrollToContact}
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-3 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
+              >
+                Записаться на пробное занятие
+              </button>
+            </div>
           </div>
         </div>
       </div>
