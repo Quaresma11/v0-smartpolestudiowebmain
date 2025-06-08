@@ -61,6 +61,9 @@ const Header = () => {
               <button onClick={() => scrollToSection("trainers")} className="hover:text-yellow-400 transition-colors">
                 Тренеры
               </button>
+              <button onClick={() => scrollToSection("gallery")} className="hover:text-yellow-400 transition-colors">
+                Галерея
+              </button>
               <button onClick={() => scrollToSection("schedule")} className="hover:text-yellow-400 transition-colors">
                 Расписание
               </button>
@@ -108,6 +111,12 @@ const Header = () => {
                 className="block w-full text-left py-2 hover:text-yellow-400 transition-colors"
               >
                 Тренеры
+              </button>
+              <button
+                onClick={() => scrollToSection("gallery")}
+                className="block w-full text-left py-2 hover:text-yellow-400 transition-colors"
+              >
+                Галерея
               </button>
               <button
                 onClick={() => scrollToSection("schedule")}

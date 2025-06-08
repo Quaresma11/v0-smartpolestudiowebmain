@@ -80,8 +80,8 @@ const Hero = () => {
                 <div className="flex justify-center mb-2">
                   <Award className="w-8 h-8 text-yellow-400" aria-hidden="true" />
                 </div>
-                <div className="text-2xl font-bold text-yellow-400">3</div>
-                <div className="text-sm text-gray-400">Года опыта</div>
+                <div className="text-2xl font-bold text-yellow-400">5</div>
+                <div className="text-sm text-gray-400">Лет опыта</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-2">
@@ -95,13 +95,12 @@ const Hero = () => {
 
           <div className="relative">
             <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/10 rounded-3xl p-8 backdrop-blur-sm border border-yellow-400/20">
-              <div className="aspect-square bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Star className="w-12 h-12 text-black" aria-hidden="true" />
-                  </div>
-                  <p className="text-gray-400">Фото студии</p>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <img
+                  src="/images/hero-studio.jpg"
+                  alt="Профессиональные занятия pole sport в Smart Pole Studio"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
             </div>
 
