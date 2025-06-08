@@ -5,13 +5,13 @@ import { Award, Star, Users } from "lucide-react"
 const Trainers = () => {
   const trainers = [
     {
-      name: "Анна Петрова",
+      name: "Екатерина Шевелева",
       title: "Главный тренер, основательница",
       experience: "8 лет",
       achievements: ["Чемпионка России по Pole Sport", "Сертифицированный тренер IPSF"],
       specialization: "Pole Sport всех уровней, хореография",
       description:
-        "Анна начала заниматься pole sport в 2016 году и уже через два года стала чемпионкой России. Основала Smart Pole с миссией сделать этот вид спорта доступным каждому.",
+        "Екатерина начала заниматься pole sport в 2016 году и уже через два года стала чемпионкой России. Основала Smart Pole с миссией сделать этот вид спорта доступным каждому.",
     },
     {
       name: "Мария Иванова",
@@ -65,14 +65,32 @@ const Trainers = () => {
               className="bg-white rounded-xl overflow-hidden border border-yellow-400/20 hover:border-yellow-400/40 transition-all group shadow-lg"
             >
               <div className="relative">
-                <div className="aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Users className="w-10 h-10 text-black" />
-                    </div>
-                    <p className="text-gray-400">Фото тренера</p>
+                {index === 0 || index === 1 ? (
+                  <div className="aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden">
+                    <img
+                      src="/images/trainer-ekaterina.jpg"
+                      alt={
+                        index === 0
+                          ? "Екатерина Шевелева - главный тренер Smart Pole Studio"
+                          : "Мария Иванова - старший тренер Smart Pole Studio"
+                      }
+                      className="w-full h-full object-cover object-center"
+                      style={{
+                        clipPath: "circle(50% at 50% 50%)",
+                        background: "linear-gradient(to bottom right, #f3f4f6, #e5e7eb)",
+                      }}
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div className="aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Users className="w-10 h-10 text-black" />
+                      </div>
+                      <p className="text-gray-400">Фото тренера</p>
+                    </div>
+                  </div>
+                )}
                 <div className="absolute top-4 right-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-semibold">
                   {trainer.experience} опыта
                 </div>
