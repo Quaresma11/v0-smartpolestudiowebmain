@@ -132,7 +132,7 @@ const Footer = () => {
                   <span className="text-gray-400">Body Fitness</span>
                 </li>
                 <li>
-                  <span className="text-gray-400">Functional Training</span>
+                  <span className="text-gray-400">Aerial Hoop</span>
                 </li>
               </ul>
             </div>
