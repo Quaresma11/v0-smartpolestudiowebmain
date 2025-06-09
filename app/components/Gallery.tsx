@@ -104,20 +104,20 @@ const Gallery = () => {
           </div>
 
           {/* Галерея изображений */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredImages.map((image, index) => (
               <div
                 key={image.id}
-                className={`group relative overflow-hidden rounded-xl border border-yellow-400/20 hover:border-yellow-400/40 transition-all duration-300 cursor-pointer transform hover:scale-105 ${
-                  index === 0 || index === 4 ? "lg:col-span-2" : ""
-                } ${index === 2 ? "md:col-span-2 lg:col-span-1" : ""}`}
+                className={`group relative overflow-hidden rounded-xl border border-yellow-400/20 hover:border-yellow-400/40 transition-all duration-300 cursor-pointer transform hover:scale-105`}
                 onClick={() => openModal(image.id)}
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div
+                  className={`overflow-hidden ${image.src === "/images/gallery/acrobatics-duo.jpg" ? "aspect-[3/4]" : "aspect-auto"}`}
+                >
                   <img
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
 
@@ -137,46 +137,30 @@ const Gallery = () => {
               </div>
             ))}
           </div>
-
-          {/* Статистика */}
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">500+</div>
-              <div className="text-gray-400">Фотографий в архиве</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">50+</div>
-              <div className="text-gray-400">Элементов освоено</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-yellow-400 mb-2">100+</div>
-              <div className="text-gray-400">Счастливых учениц</div>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Модальное окно */}
       {selectedImage && selectedImageData && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl max-h-[90vh] w-full">
+          <div className="relative w-full h-full flex items-center justify-center">
             <button
               onClick={closeModal}
-              className="absolute -top-12 right-0 w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black hover:bg-yellow-500 transition-colors z-10"
+              className="absolute top-4 right-4 w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black hover:bg-yellow-500 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>
 
-            <div className="bg-gray-900 rounded-xl overflow-hidden border border-yellow-400/20">
-              <div className="aspect-auto max-h-[70vh] overflow-hidden">
+            <div className="relative max-w-[90vw] max-h-[90vh] flex flex-col">
+              <div className="flex-1 flex items-center justify-center overflow-hidden rounded-xl">
                 <img
                   src={selectedImageData.src || "/placeholder.svg"}
                   alt={selectedImageData.alt}
-                  className="w-full h-full object-contain"
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
 
-              <div className="p-6">
+              <div className="bg-gray-900/90 backdrop-blur-sm rounded-b-xl p-6 mt-2">
                 <h3 className="text-2xl font-bold text-yellow-400 mb-2">{selectedImageData.title}</h3>
                 <p className="text-gray-300">{selectedImageData.description}</p>
               </div>
