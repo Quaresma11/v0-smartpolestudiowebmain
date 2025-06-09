@@ -48,12 +48,15 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden lg:flex space-x-6">
               <button onClick={() => scrollToSection("home")} className="hover:text-yellow-400 transition-colors">
                 Главная
               </button>
               <button onClick={() => scrollToSection("about")} className="hover:text-yellow-400 transition-colors">
                 О нас
+              </button>
+              <button onClick={() => scrollToSection("directions")} className="hover:text-yellow-400 transition-colors">
+                Направления
               </button>
               <button onClick={() => scrollToSection("services")} className="hover:text-yellow-400 transition-colors">
                 Услуги
@@ -74,20 +77,20 @@ const Header = () => {
 
             <button
               onClick={() => scrollToSection("contact")}
-              className="hidden md:block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
+              className="hidden lg:block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
             >
               Записаться
             </button>
 
             {/* Mobile menu button */}
-            <button className="md:hidden text-yellow-400" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button className="lg:hidden text-yellow-400" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <nav className="md:hidden pb-4 space-y-2">
+            <nav className="lg:hidden pb-4 space-y-2">
               <button
                 onClick={() => scrollToSection("home")}
                 className="block w-full text-left py-2 hover:text-yellow-400 transition-colors"
@@ -99,6 +102,12 @@ const Header = () => {
                 className="block w-full text-left py-2 hover:text-yellow-400 transition-colors"
               >
                 О нас
+              </button>
+              <button
+                onClick={() => scrollToSection("directions")}
+                className="block w-full text-left py-2 hover:text-yellow-400 transition-colors"
+              >
+                Направления
               </button>
               <button
                 onClick={() => scrollToSection("services")}

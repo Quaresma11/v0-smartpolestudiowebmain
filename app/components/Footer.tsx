@@ -63,6 +63,14 @@ const Footer = () => {
                 </li>
                 <li>
                   <button
+                    onClick={() => scrollToSection("directions")}
+                    className="text-gray-400 hover:text-yellow-400 transition-colors"
+                  >
+                    Направления
+                  </button>
+                </li>
+                <li>
+                  <button
                     onClick={() => scrollToSection("services")}
                     className="text-gray-400 hover:text-yellow-400 transition-colors"
                   >
@@ -104,27 +112,27 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Services */}
+            {/* Directions */}
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-yellow-400">Услуги</h4>
+              <h4 className="text-lg font-semibold mb-4 text-yellow-400">Направления</h4>
               <ul className="space-y-2">
                 <li>
-                  <span className="text-gray-400">Pole Sport для начинающих</span>
+                  <span className="text-gray-400">Pole Sport</span>
                 </li>
                 <li>
-                  <span className="text-gray-400">Pole Sport средний уровень</span>
+                  <span className="text-gray-400">Pole Kids</span>
                 </li>
                 <li>
-                  <span className="text-gray-400">Pole Sport продвинутый</span>
+                  <span className="text-gray-400">Pole Choreo</span>
                 </li>
                 <li>
-                  <span className="text-gray-400">Индивидуальные занятия</span>
+                  <span className="text-gray-400">Stretching</span>
                 </li>
                 <li>
-                  <span className="text-gray-400">Растяжка и гибкость</span>
+                  <span className="text-gray-400">Body Fitness</span>
                 </li>
                 <li>
-                  <span className="text-gray-400">Pole Dance хореография</span>
+                  <span className="text-gray-400">Functional Training</span>
                 </li>
               </ul>
             </div>
