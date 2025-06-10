@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { X, Star, Heart, Zap, Flame, Users, Dumbbell } from "lucide-react"
+import { X, Star, Heart, Zap, Flame, Users, Dumbbell, Sparkles, Baby } from "lucide-react"
 
 const Directions = () => {
   const [selectedDirection, setSelectedDirection] = useState<number | null>(null)
@@ -12,7 +12,7 @@ const Directions = () => {
       title: "Pole Sport",
       subtitle: "Спортивное направление",
       icon: Star,
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/directions/pole-sport.jpg",
       shortDescription: "Силовые элементы и акробатика на пилоне",
       fullDescription:
         "Pole Sport — это спортивное направление, которое сочетает в себе силовые элементы, акробатику и хореографию на вертикальном пилоне. Развивает силу всех групп мышц, координацию, гибкость и выносливость. Подходит для всех уровней подготовки — от новичков до профессионалов.",
@@ -30,7 +30,7 @@ const Directions = () => {
       title: "Pole Kids",
       subtitle: "Для детей 6-16 лет",
       icon: Heart,
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/directions/pole-kids.jpg",
       shortDescription: "Безопасные занятия pole sport для детей",
       fullDescription:
         "Pole Kids — специально разработанная программа для детей от 6 до 16 лет. Занятия проходят в игровой форме с акцентом на безопасность и правильную технику. Развивает физические качества, дисциплину и уверенность в себе.",
@@ -66,7 +66,7 @@ const Directions = () => {
       title: "Stretching",
       subtitle: "Растяжка и гибкость",
       icon: Zap,
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/directions/stretching.jpg",
       shortDescription: "Развитие гибкости и подвижности суставов",
       fullDescription:
         "Stretching — направление, посвященное развитию гибкости, подвижности суставов и эластичности мышц. Включает статические и динамические упражнения на растяжку, которые помогают улучшить результаты в pole sport и общее самочувствие.",
@@ -99,13 +99,13 @@ const Directions = () => {
     },
     {
       id: 6,
-      title: "Aerial Hoop",
-      subtitle: "Воздушное кольцо",
+      title: "Aerial Sport",
+      subtitle: "Воздушная акробатика",
       icon: Users,
-      image: "/placeholder.svg?height=300&width=400",
-      shortDescription: "Акробатика и хореография в воздушном кольце",
+      image: "/images/directions/aerial-sport.jpg",
+      shortDescription: "Акробатика на воздушном кольце и полотнах",
       fullDescription:
-        "Aerial Hoop (воздушное кольцо) — это захватывающее направление воздушной акробатики, где все элементы выполняются в подвешенном металлическом кольце. Сочетает силовые элементы, гибкость и артистизм, создавая невероятно красивые композиции в воздухе.",
+        "Aerial Sport — это захватывающее направление воздушной акробатики, включающее работу на воздушном кольце и воздушных полотнах. Сочетает силовые элементы, гибкость и артистизм, создавая невероятно красивые композиции в воздухе. Направление развивает не только физические качества, но и преодолевает страхи, повышает уверенность в себе.",
       benefits: [
         "Развитие силы верхней части тела",
         "Улучшение координации в пространстве",
@@ -114,6 +114,42 @@ const Directions = () => {
         "Укрепление мышц кора",
       ],
       levels: ["Начинающий", "Средний", "Продвинутый"],
+    },
+    {
+      id: 7,
+      title: "Exotic Dance",
+      subtitle: "Женственность и пластика",
+      icon: Sparkles,
+      image: "/images/directions/exotic-dance.jpg",
+      shortDescription: "Танцевальное направление с акцентом на женственность",
+      fullDescription:
+        "Exotic Dance — это танцевальное направление, которое сочетает элементы pole dance с акцентом на женственность, пластику и чувственность. Включает работу на каблуках, партерную хореографию и элементы на пилоне. Помогает раскрыть внутреннюю женственность, повысить уверенность в себе и развить пластику движений.",
+      benefits: [
+        "Развитие женственности и грации",
+        "Повышение уверенности в себе",
+        "Улучшение пластики движений",
+        "Работа с музыкальностью",
+        "Эмоциональное раскрепощение",
+      ],
+      levels: ["Начинающий", "Средний", "Продвинутый"],
+    },
+    {
+      id: 8,
+      title: "Aerial Sport Kids",
+      subtitle: "Воздушная акробатика для детей",
+      icon: Baby,
+      image: "/images/directions/aerial-sport-kids.jpg",
+      shortDescription: "Воздушная акробатика на кольце и полотнах для детей",
+      fullDescription:
+        "Aerial Sport Kids — увлекательная программа воздушной акробатики для юных спортсменов от 6 до 16 лет. Дети изучают элементы на воздушном кольце и полотнах, развивая пространственное мышление и координацию в трехмерном пространстве. Особое внимание уделяется технике безопасности при работе на высоте. Занятия помогают детям преодолеть страх высоты, развить силу хвата и научиться контролировать свое тело в воздухе.",
+      benefits: [
+        "Развитие пространственного мышления",
+        "Укрепление силы хвата и рук",
+        "Преодоление страха высоты",
+        "Улучшение координации в воздухе",
+        "Развитие концентрации внимания",
+      ],
+      levels: ["6-9 лет", "10-13 лет", "14-16 лет"],
     },
   ]
 
@@ -154,7 +190,7 @@ const Directions = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {directions.map((direction) => (
             <div
               key={direction.id}

@@ -33,18 +33,17 @@ const Contact = () => {
       id: "branch1",
       name: "Филиал м. Семеновская",
       address: "Москва, ул. Ткацкая д.5 с.7",
-      phone: "+7 (999) 123-45-67",
       metro: "м. Семеновская",
       mapUrl:
         "https://yandex.ru/maps/213/moscow/?from=mapframe&ll=37.719237%2C55.785524&mode=usermaps&source=mapframe&um=constructor%3Af07b72429ebc732cc8fd368c993724d19495bfb4a83d81501ef24e023edf1d14&utm_source=mapframe&z=16",
     },
     {
       id: "branch2",
-      name: "Филиал 2 - Север",
-      address: "Москва, ул. Другая, 25",
-      phone: "+7 (999) 765-43-21",
-      metro: "м. Другая",
-      mapUrl: "https://yandex.ru/maps/...", // Замените на актуальную ссылку
+      name: "Филиал м. Бульвар Рокоссовского",
+      address: "Москва, ул.Ивантеевская 13 к.1",
+      metro: "м.Бульвар Рокоссовского",
+      mapUrl:
+        "https://yandex.ru/maps/213/moscow/?from=mapframe&ll=37.730745%2C55.816359&mode=usermaps&source=mapframe&um=constructor%3A05e053f38dc9d2ec1a824f49ada7bd3fca2bdfee52e9b3868668c2afe6f50db4&utm_source=mapframe&z=16",
     },
   ]
 
@@ -77,20 +76,6 @@ const Contact = () => {
                     <p className="text-gray-500 text-sm">{location.metro}</p>
                   </div>
                 </div>
-
-                {/* Показываем телефон только для второго филиала */}
-                {location.id === "branch2" && (
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-black" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1 text-gray-900">Телефон</h4>
-                      <p className="text-gray-700">{location.phone}</p>
-                      <p className="text-gray-500 text-sm">Звонки принимаем с 9:00 до 22:00</p>
-                    </div>
-                  </div>
-                )}
               </div>
 
               <a
@@ -113,6 +98,17 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-6 text-yellow-600">Общие контакты</h3>
 
               <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-black" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1 text-gray-900">Телефон</h4>
+                    <p className="text-gray-700">+7-993-366-23-68</p>
+                    <p className="text-gray-500 text-sm">Звонки принимаем с 9:00 до 22:00</p>
+                  </div>
+                </div>
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-black" />
@@ -196,7 +192,7 @@ const Contact = () => {
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:border-yellow-400 focus:outline-none transition-colors"
                 >
                   <option value="Филиал 1">Филиал м. Семеновская</option>
-                  <option value="Филиал 2">Филиал 2 - Север</option>
+                  <option value="Филиал 2">Филиал м. Бульвар Рокоссовского</option>
                 </select>
               </div>
 

@@ -115,7 +115,7 @@ const Footer = () => {
             {/* Directions */}
             <div>
               <h4 className="text-lg font-semibold mb-4 text-yellow-400">Направления</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-sm">
                 <li>
                   <span className="text-gray-400">Pole Sport</span>
                 </li>
@@ -132,7 +132,13 @@ const Footer = () => {
                   <span className="text-gray-400">Body Fitness</span>
                 </li>
                 <li>
-                  <span className="text-gray-400">Aerial Hoop</span>
+                  <span className="text-gray-400">Aerial Sport</span>
+                </li>
+                <li>
+                  <span className="text-gray-400">Exotic Dance</span>
+                </li>
+                <li>
+                  <span className="text-gray-400">Aerial Sport Kids</span>
                 </li>
               </ul>
             </div>
@@ -143,10 +149,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-yellow-400" />
-                  <div>
-                    <p className="text-gray-400 text-sm">Филиал 1: +7 (999) 123-45-67</p>
-                    <p className="text-gray-400 text-sm">Филиал 2: +7 (999) 765-43-21</p>
-                  </div>
+                  <span className="text-gray-400">+7-993-366-23-68</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-yellow-400" />

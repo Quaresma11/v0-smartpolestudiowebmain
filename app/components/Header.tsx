@@ -30,7 +30,7 @@ const Header = () => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-yellow-400" />
-                <span>+7 (999) 123-45-67</span>
+                <span>+7-993-366-23-68</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-yellow-400" />

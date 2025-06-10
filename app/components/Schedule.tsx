@@ -91,10 +91,10 @@ const Schedule = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="tel:+79991234567"
+                  href="tel:+79933662368"
                   className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
                 >
-                  Позвонить: +7 (999) 123-45-67
+                  Позвонить: +7-993-366-23-68
                 </a>
                 <button
                   onClick={scrollToContact}
