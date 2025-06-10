@@ -31,10 +31,10 @@ const Contact = () => {
   const locations = [
     {
       id: "branch1",
-      name: "Филиал 1 - Центр",
-      address: "Москва, ул. Примерная, 10",
+      name: "Филиал м. Семеновская",
+      address: "Москва, ул. Ткацкая д.5 с.7",
       phone: "+7 (999) 123-45-67",
-      metro: "м. Примерная",
+      metro: "м. Семеновская",
       mapUrl:
         "https://yandex.ru/maps/213/moscow/?from=mapframe&ll=37.719237%2C55.785524&mode=usermaps&source=mapframe&um=constructor%3Af07b72429ebc732cc8fd368c993724d19495bfb4a83d81501ef24e023edf1d14&utm_source=mapframe&z=16",
     },
@@ -78,16 +78,19 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-black" />
+                {/* Показываем телефон только для второго филиала */}
+                {location.id === "branch2" && (
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-black" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1 text-gray-900">Телефон</h4>
+                      <p className="text-gray-700">{location.phone}</p>
+                      <p className="text-gray-500 text-sm">Звонки принимаем с 9:00 до 22:00</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-1 text-gray-900">Телефон</h4>
-                    <p className="text-gray-700">{location.phone}</p>
-                    <p className="text-gray-500 text-sm">Звонки принимаем с 9:00 до 22:00</p>
-                  </div>
-                </div>
+                )}
               </div>
 
               <a
@@ -192,7 +195,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:border-yellow-400 focus:outline-none transition-colors"
                 >
-                  <option value="Филиал 1">Филиал 1 - Центр</option>
+                  <option value="Филиал 1">Филиал м. Семеновская</option>
                   <option value="Филиал 2">Филиал 2 - Север</option>
                 </select>
               </div>
