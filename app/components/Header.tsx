@@ -34,7 +34,7 @@ const Header = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-yellow-400" />
-                <span>Москва, ул. Спортивная, 15</span>
+                <span>2 филиала в Москве</span>
               </div>
             </div>
             <div className="text-yellow-400">Работаем с 9:00 до 22:00</div>

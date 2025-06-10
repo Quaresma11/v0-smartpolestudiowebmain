@@ -23,7 +23,7 @@ const Footer = () => {
                 <span className="text-white"> Pole</span>
               </div>
               <p className="text-gray-400">
-                Профессиональная студия pole sport в центре Москвы. Развивайте силу, грацию и уверенность в себе!
+                Профессиональная студия pole sport с 2 филиалами в Москве. Развивайте силу, грацию и уверенность в себе!
               </p>
               <div className="flex space-x-4">
                 <a
@@ -143,7 +143,10 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-yellow-400" />
-                  <span className="text-gray-400">+7 (999) 123-45-67</span>
+                  <div>
+                    <p className="text-gray-400 text-sm">Филиал 1: +7 (999) 123-45-67</p>
+                    <p className="text-gray-400 text-sm">Филиал 2: +7 (999) 765-43-21</p>
+                  </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-yellow-400" />
@@ -151,7 +154,10 @@ const Footer = () => {
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-yellow-400 mt-0.5" />
-                  <span className="text-gray-400">Москва, ул. Спортивная, 15</span>
+                  <div>
+                    <p className="text-gray-400 text-sm">2 филиала в Москве</p>
+                    <p className="text-gray-400 text-sm">Удобное расположение</p>
+                  </div>
                 </div>
               </div>
 
