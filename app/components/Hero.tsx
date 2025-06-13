@@ -3,19 +3,6 @@
 import { Star, Award, Users } from "lucide-react"
 
 const Hero = () => {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact")
-    if (element) {
-      const headerHeight = 120 // Высота хедера
-      const elementPosition = element.offsetTop - headerHeight
-
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth",
-      })
-    }
-  }
-
   return (
     <section
       id="home"
@@ -37,8 +24,8 @@ const Hero = () => {
                 <span className="text-gray-300 text-3xl lg:text-4xl">Studio</span>
               </h1>
               <p className="text-xl text-gray-300 max-w-lg" itemProp="description">
-                Профессиональная студия pole sport в центре Москвы. Развивайте силу, грацию и уверенность в себе вместе
-                с нами!
+                Профессиональная студия пилонного спорта и воздушной гимнастики в центре Москвы. Развивайте силу, грацию
+                и уверенность в себе вместе с нами!
               </p>
 
               {/* Скрытая информация для SEO */}
@@ -52,20 +39,16 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={scrollToContact}
-                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg"
+            <div className="flex flex-col gap-4">
+              <a
+                href="https://t.me/smartpolestudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-4 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 shadow-lg text-center"
                 aria-label="Записаться на пробное занятие pole sport в Smart Pole Studio"
               >
                 Записаться на пробное занятие
-              </button>
-              <button
-                className="border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 hover:text-black transition-all"
-                aria-label="Посмотреть видео о занятиях pole sport"
-              >
-                Посмотреть видео
-              </button>
+              </a>
             </div>
 
             <div className="grid grid-cols-3 gap-8 pt-8">
@@ -73,14 +56,14 @@ const Hero = () => {
                 <div className="flex justify-center mb-2">
                   <Users className="w-8 h-8 text-yellow-400" aria-hidden="true" />
                 </div>
-                <div className="text-2xl font-bold text-yellow-400">500+</div>
+                <div className="text-2xl font-bold text-yellow-400">1500+</div>
                 <div className="text-sm text-gray-400">Учеников</div>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-2">
                   <Award className="w-8 h-8 text-yellow-400" aria-hidden="true" />
                 </div>
-                <div className="text-2xl font-bold text-yellow-400">5</div>
+                <div className="text-2xl font-bold text-yellow-400">10</div>
                 <div className="text-sm text-gray-400">Лет опыта</div>
               </div>
               <div className="text-center">
