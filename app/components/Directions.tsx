@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { X, Star, Heart, Zap, Flame, Users, Dumbbell, Sparkles, Baby } from "lucide-react"
+import { X, Star, Zap, Flame, Users, Dumbbell, Sparkles } from "lucide-react"
 
 const Directions = () => {
   const [selectedDirection, setSelectedDirection] = useState<number | null>(null)
@@ -10,12 +10,12 @@ const Directions = () => {
     {
       id: 1,
       title: "Pole Sport",
-      subtitle: "Спортивное направление",
+      subtitle: "Спортивный пилон",
       icon: Star,
       image: "/images/directions/pole-sport.jpg",
       shortDescription: "Силовые элементы и акробатика на пилоне",
       fullDescription:
-        "Pole Sport — это спортивное направление, которое сочетает в себе силовые элементы, акробатику и хореографию на вертикальном пилоне. Развивает силу всех групп мышц, координацию, гибкость и выносливость. Подходит для всех уровней подготовки — от новичков до профессионалов.",
+        "Pole Sport — это спортивное направление, которое сочетает в себе силовые элементы, акробатику и хореографию на вертикальном пилоне. Подходит для детей, взрослых и мам. Развивает силу всех групп мышц, координацию, гибкость и выносливость. Подходит для всех уровней подготовки — от новичков до профессионалов.",
       benefits: [
         "Развитие силы и выносливости",
         "Улучшение координации и баланса",
@@ -26,32 +26,14 @@ const Directions = () => {
       levels: ["Начинающий", "Средний", "Продвинутый", "Профессиональный"],
     },
     {
-      id: 2,
-      title: "Pole Kids",
-      subtitle: "Для детей 6-16 лет",
-      icon: Heart,
-      image: "/images/directions/pole-kids.jpg",
-      shortDescription: "Безопасные занятия pole sport для детей",
-      fullDescription:
-        "Pole Kids — специально разработанная программа для детей от 6 до 16 лет. Занятия проходят в игровой форме с акцентом на безопасность и правильную технику. Развивает физические качества, дисциплину и уверенность в себе.",
-      benefits: [
-        "Физическое развитие ребенка",
-        "Улучшение осанки",
-        "Развитие координации",
-        "Повышение самооценки",
-        "Социализация в группе",
-      ],
-      levels: ["6-9 лет", "10-13 лет", "14-16 лет"],
-    },
-    {
       id: 3,
-      title: "Pole Choreo",
-      subtitle: "Танцевальное направление",
+      title: "Pole Dance",
+      subtitle: "Танцевальные связки на пилоне",
       icon: Flame,
       image: "/placeholder.svg?height=300&width=400",
-      shortDescription: "Хореография и артистизм на пилоне",
+      shortDescription: "Танцевальные связки и хореография на пилоне",
       fullDescription:
-        "Pole Choreo — это танцевальное направление, где акцент делается на хореографии, пластике и артистизме. Сочетает элементы pole sport с танцевальными движениями, создавая красивые и эмоциональные композиции.",
+        "Pole Dance — это танцевальное направление, где акцент делается на хореографии, пластике и артистизме. Включает изучение танцевальных связок на пилоне, сочетая элементы pole sport с танцевальными движениями, создавая красивые и эмоциональные композиции.",
       benefits: [
         "Развитие артистизма",
         "Улучшение пластики",
@@ -81,13 +63,13 @@ const Directions = () => {
     },
     {
       id: 5,
-      title: "Body Fitness",
-      subtitle: "Функциональный фитнес",
+      title: "Скульптура тела",
+      subtitle: "Формирование красивого тела",
       icon: Dumbbell,
       image: "/placeholder.svg?height=300&width=400",
-      shortDescription: "Комплексная тренировка всего тела",
+      shortDescription: "Комплексная тренировка для создания красивого рельефа тела",
       fullDescription:
-        "Body Fitness — это комплексная тренировка, направленная на развитие всех физических качеств: силы, выносливости, гибкости и координации. Включает упражнения с собственным весом, функциональные движения и кардио-нагрузки.",
+        "Скульптура тела — это комплексная программа тренировок, направленная на формирование красивого рельефа и подтянутой фигуры. Включает силовые упражнения, функциональные движения и кардио-нагрузки для создания идеальных пропорций тела.",
       benefits: [
         "Укрепление всех групп мышц",
         "Улучшение выносливости",
@@ -99,13 +81,13 @@ const Directions = () => {
     },
     {
       id: 6,
-      title: "Aerial Sport",
+      title: "Воздушная гимнастика",
       subtitle: "Воздушная акробатика",
       icon: Users,
       image: "/images/directions/aerial-sport.jpg",
-      shortDescription: "Акробатика на воздушном кольце и полотнах",
+      shortDescription: "Гимнастика на воздушном кольце и полотнах",
       fullDescription:
-        "Aerial Sport — это захватывающее направление воздушной акробатики, включающее работу на воздушном кольце и воздушных полотнах. Сочетает силовые элементы, гибкость и артистизм, создавая невероятно красивые композиции в воздухе. Направление развивает не только физические качества, но и преодолевает страхи, повышает уверенность в себе.",
+        "Воздушная гимнастика — это захватывающее направление, включающее работу на воздушном кольце и воздушных полотнах. Подходит как для детей, так и для взрослых. Сочетает силовые элементы, гибкость и артистизм, создавая невероятно красивые композиции в воздухе. Направление развивает не только физические качества, но и преодолевает страхи, повышает уверенность в себе.",
       benefits: [
         "Развитие силы верхней части тела",
         "Улучшение координации в пространстве",
@@ -134,22 +116,22 @@ const Directions = () => {
       levels: ["Начинающий", "Средний", "Продвинутый"],
     },
     {
-      id: 8,
-      title: "Aerial Sport Kids",
-      subtitle: "Воздушная акробатика для детей",
-      icon: Baby,
-      image: "/images/directions/aerial-sport-kids.jpg",
-      shortDescription: "Воздушная акробатика на кольце и полотнах для детей",
+      id: 9,
+      title: "Акробатика",
+      subtitle: "Для детей и взрослых",
+      icon: Zap,
+      image: "/placeholder.svg?height=300&width=400",
+      shortDescription: "Акробатические элементы и трюки на полу",
       fullDescription:
-        "Aerial Sport Kids — увлекательная программа воздушной акробатики для юных спортсменов от 6 до 16 лет. Дети изучают элементы на воздушном кольце и полотнах, развивая пространственное мышление и координацию в трехмерном пространстве. Особое внимание уделяется технике безопасности при работе на высоте. Занятия помогают детям преодолеть страх высоты, развить силу хвата и научиться контролировать свое тело в воздухе.",
+        "Акробатика — универсальное направление для детей и взрослых, включающее изучение акробатических элементов, кувырков, стоек и различных трюков на полу. Развивает координацию, силу, гибкость и пространственное мышление. Отличная база для других направлений воздушной гимнастики и пилонного спорта.",
       benefits: [
-        "Развитие пространственного мышления",
-        "Укрепление силы хвата и рук",
-        "Преодоление страха высоты",
-        "Улучшение координации в воздухе",
-        "Развитие концентрации внимания",
+        "Развитие координации и баланса",
+        "Укрепление всех групп мышц",
+        "Улучшение гибкости",
+        "Преодоление страхов",
+        "Подготовка к сложным элементам",
       ],
-      levels: ["6-9 лет", "10-13 лет", "14-16 лет"],
+      levels: ["Детский", "Взрослый", "Семейный"],
     },
   ]
 
@@ -240,12 +222,14 @@ const Directions = () => {
               Наши тренеры помогут определить подходящее направление на бесплатной консультации. Учтем ваш уровень
               подготовки, цели и предпочтения.
             </p>
-            <button
-              onClick={scrollToContact}
-              className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-3 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
+            <a
+              href="https://t.me/smartpolestudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-3 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
             >
               Получить консультацию
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -262,11 +246,11 @@ const Directions = () => {
             </button>
 
             <div className="bg-white rounded-xl overflow-hidden">
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={selectedDirectionData.image || "/placeholder.svg"}
                   alt={`${selectedDirectionData.title} в Smart Pole Studio`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
@@ -315,18 +299,6 @@ const Directions = () => {
                       ))}
                     </ul>
                   </div>
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-                  <button
-                    onClick={() => {
-                      closeModal()
-                      scrollToContact()
-                    }}
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-8 py-3 rounded-lg font-bold text-lg hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
-                  >
-                    Записаться на {selectedDirectionData.title}
-                  </button>
                 </div>
               </div>
             </div>

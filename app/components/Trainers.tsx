@@ -32,19 +32,6 @@ const Trainers = () => {
     },
   ]
 
-  const scrollToContact = () => {
-    const element = document.getElementById("contact")
-    if (element) {
-      const headerHeight = 120 // Высота хедера
-      const elementPosition = element.offsetTop - headerHeight
-
-      window.scrollTo({
-        top: elementPosition,
-        behavior: "smooth",
-      })
-    }
-  }
-
   return (
     <section id="trainers" className="py-20 bg-gray-50 text-gray-900">
       <div className="container mx-auto px-4">
@@ -118,13 +105,6 @@ const Trainers = () => {
                 </div>
 
                 <p className="text-gray-500 text-sm mb-6">{trainer.description}</p>
-
-                <button
-                  onClick={scrollToContact}
-                  className="w-full bg-gradient-to-r from-yellow-400/20 to-yellow-600/10 border border-yellow-400/40 text-yellow-600 py-2 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all"
-                >
-                  Записаться к тренеру
-                </button>
               </div>
             </div>
           ))}
@@ -147,12 +127,12 @@ const Trainers = () => {
                 <div className="text-gray-500 text-sm">Сертифицированные тренеры</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400 mb-1">500+</div>
+                <div className="text-2xl font-bold text-yellow-400 mb-1">1500+</div>
                 <div className="text-gray-500 text-sm">Довольных учеников</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-400 mb-1">3</div>
-                <div className="text-gray-500 text-sm">Года успешной работы</div>
+                <div className="text-2xl font-bold text-yellow-400 mb-1">10</div>
+                <div className="text-gray-500 text-sm">Лет успешной работы</div>
               </div>
             </div>
           </div>

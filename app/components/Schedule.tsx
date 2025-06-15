@@ -86,43 +86,25 @@ const Schedule = () => {
             <div className="bg-gradient-to-r from-yellow-400/10 to-yellow-600/5 p-8 rounded-2xl border border-yellow-400/20 max-w-4xl mx-auto">
               <h3 className="text-2xl font-bold mb-4 text-yellow-400">Альтернативные способы записи</h3>
               <p className="text-gray-300 mb-6">
-                Если система записи недоступна, вы всегда можете записаться на занятия по телефону или через форму
-                обратной связи
+                Если система записи недоступна, вы всегда можете записаться на занятия по телефону
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a
                   href="tel:+79933662368"
                   className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
                 >
                   Позвонить: +7-993-366-23-68
                 </a>
-                <button
-                  onClick={scrollToContact}
-                  className="border-2 border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all"
-                >
-                  Форма обратной связи
-                </button>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 text-left mt-8">
-                <div>
-                  <h4 className="font-semibold mb-2 text-white">Правила записи:</h4>
-                  <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Запись открывается за 7 дней до занятия</li>
-                    <li>• Отмена записи не позднее чем за 4 часа</li>
-                    <li>• При опоздании более 15 минут вход на занятие запрещен</li>
-                    <li>• Пропущенные занятия не компенсируются</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2 text-white">Что взять с собой:</h4>
-                  <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Удобную спортивную одежду</li>
-                    <li>• Воду для питья</li>
-                    <li>• Полотенце</li>
-                    <li>• Хорошее настроение!</li>
-                  </ul>
-                </div>
+              <div className="text-left">
+                <h4 className="font-semibold mb-2 text-white">Что взять с собой:</h4>
+                <ul className="space-y-1 text-gray-300 text-sm">
+                  <li>• Удобную спортивную одежду</li>
+                  <li>• Воду для питья</li>
+                  <li>• Полотенце</li>
+                  <li>• Хорошее настроение!</li>
+                </ul>
               </div>
             </div>
           </div>
