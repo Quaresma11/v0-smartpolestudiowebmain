@@ -12,6 +12,7 @@ const Trainers = () => {
       specialization: "Pole Sport всех уровней, хореография",
       description:
         "Екатерина начала заниматься pole sport в 2016 году и уже через два года стала чемпионкой России. Основала Smart Pole с миссией сделать этот вид спорта доступным каждому.",
+      image: "/images/trainer-ekaterina.jpg",
     },
     {
       name: "Мария Иванова",
@@ -21,6 +22,7 @@ const Trainers = () => {
       specialization: "Pole Sport средний и продвинутый уровень",
       description:
         "Мария специализируется на технически сложных элементах и помогает ученикам достигать новых высот в pole sport.",
+      image: "/images/trainer-maria.jpg",
     },
     {
       name: "Екатерина Сидорова",
@@ -29,6 +31,7 @@ const Trainers = () => {
       achievements: ["Инструктор по йоге", "Специалист по стретчингу"],
       specialization: "Растяжка, гибкость, восстановление",
       description: "Екатерина поможет развить гибкость и подготовить тело к выполнению сложных элементов pole sport.",
+      image: "/images/trainer-ekaterina-sidorova.jpg",
     },
   ]
 
@@ -52,20 +55,12 @@ const Trainers = () => {
               className="bg-white rounded-xl overflow-hidden border border-yellow-400/20 hover:border-yellow-400/40 transition-all group shadow-lg"
             >
               <div className="relative">
-                {index === 0 || index === 1 ? (
-                  <div className="aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden">
+                {trainer.image ? (
+                  <div className="aspect-[4/5] bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
                     <img
-                      src="/images/trainer-ekaterina.jpg"
-                      alt={
-                        index === 0
-                          ? "Екатерина Шевелева - главный тренер Smart Pole Studio"
-                          : "Мария Иванова - старший тренер Smart Pole Studio"
-                      }
+                      src={trainer.image || "/placeholder.svg"}
+                      alt={`${trainer.name} - ${trainer.title} Smart Pole Studio`}
                       className="w-full h-full object-cover object-center"
-                      style={{
-                        clipPath: "circle(50% at 50% 50%)",
-                        background: "linear-gradient(to bottom right, #f3f4f6, #e5e7eb)",
-                      }}
                     />
                   </div>
                 ) : (
