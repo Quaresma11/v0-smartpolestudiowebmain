@@ -125,8 +125,8 @@ const Trainers = () => {
           </p>
         </div>
 
-        {/* Слайдер тренеров */}
-        <div className="relative">
+        {/* Слайдер тренеров - только для десктопа */}
+        <div className="relative hidden lg:block">
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -179,7 +179,7 @@ const Trainers = () => {
             </div>
           </div>
 
-          {/* Кнопки навигации */}
+          {/* Кнопки навигации - только для десктопа */}
           <button
             onClick={prevSlide}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black hover:bg-yellow-500 transition-colors shadow-lg z-10"
@@ -195,24 +195,24 @@ const Trainers = () => {
           >
             <ChevronRight className="w-6 h-6" />
           </button>
-        </div>
 
-        {/* Индикаторы слайдов */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {Array.from({ length: maxSlide + 1 }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentSlide === index ? "bg-yellow-400" : "bg-gray-300 hover:bg-gray-400"
-              }`}
-              aria-label={`Перейти к слайду ${index + 1}`}
-            />
-          ))}
+          {/* Индикаторы слайдов - только для десктопа */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {Array.from({ length: maxSlide + 1 }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-colors ${
+                  currentSlide === index ? "bg-yellow-400" : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Перейти к слайду ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Мобильная версия - показываем все карточки в сетке */}
-        <div className="lg:hidden grid md:grid-cols-2 gap-6 mt-16">
+        <div className="lg:hidden grid md:grid-cols-2 gap-6">
           {trainers.map((trainer, index) => (
             <div
               key={index}
