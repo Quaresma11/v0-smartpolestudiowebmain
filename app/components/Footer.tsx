@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, Mail, MapPin, Instagram, MessageCircle, Heart } from "lucide-react"
+import { Phone, Mail, MapPin, Instagram, Send, Heart, Smartphone } from "lucide-react"
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -27,18 +27,43 @@ const Footer = () => {
               </p>
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://instagram.com/_smartpole_"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-yellow-400/20 rounded-lg flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all"
+                  aria-label="Instagram Smart Pole"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://t.me/smartpole"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-yellow-400/20 rounded-lg flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all"
+                  aria-label="Telegram Smart Pole"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <Send className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://apps.apple.com/sc/app/smart-pole/id1607099495"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-yellow-400/20 rounded-lg flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all"
+                  aria-label="Скачать приложение Smart Pole для iOS"
+                >
+                  <Smartphone className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.appeventru.fitapp_4866&hl=ru&gl=US"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-yellow-400/20 rounded-lg flex items-center justify-center hover:bg-yellow-400 hover:text-black transition-all"
+                  aria-label="Скачать приложение Smart Pole для Android"
+                >
+                  <Smartphone className="w-5 h-5" />
                 </a>
               </div>
+              <p className="text-gray-500 text-xs mt-2">Следите за нами в соцсетях и скачивайте мобильное приложение</p>
             </div>
 
             {/* Quick Links */}

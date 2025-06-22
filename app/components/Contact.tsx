@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, Instagram, MessageCircle, Navigation } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Instagram, Navigation, Send, Play } from "lucide-react"
 
 const Contact = () => {
   // Данные филиалов - замените на актуальные
@@ -76,20 +76,54 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div>
+              <div className="mt-6">
                 <h4 className="text-lg font-bold mb-4 text-yellow-600">Мы в социальных сетях</h4>
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap gap-3">
                   <a
-                    href="#"
+                    href="https://instagram.com/_smartpole_"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-110"
+                    aria-label="Instagram Smart Pole"
                   >
                     <Instagram className="w-6 h-6 text-black" />
                   </a>
                   <a
-                    href="#"
+                    href="https://t.me/smartpole"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-110"
+                    aria-label="Telegram Smart Pole"
                   >
-                    <MessageCircle className="w-6 h-6 text-black" />
+                    <Send className="w-6 h-6 text-black" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-6">
+                <h4 className="text-lg font-bold mb-4 text-yellow-600">Мобильное приложение</h4>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="https://apps.apple.com/sc/app/smart-pole/id1607099495"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-all transform hover:scale-105"
+                    aria-label="Скачать приложение Smart Pole для iOS"
+                  >
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                    </svg>
+                    <span className="text-sm font-medium">App Store</span>
+                  </a>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.appeventru.fitapp_4866&hl=ru&gl=US"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all transform hover:scale-105"
+                    aria-label="Скачать приложение Smart Pole для Android"
+                  >
+                    <Play className="w-6 h-6" />
+                    <span className="text-sm font-medium">Google Play</span>
                   </a>
                 </div>
               </div>
