@@ -212,6 +212,39 @@ const Gallery = () => {
       title: "Культурные достижения",
       description: "Успехи в культурно-спортивных мероприятиях",
     },
+    // New batch of 4 images
+    {
+      id: 26,
+      src: "/images/gallery/team-celebration-medals.jpg",
+      alt: "Команда юных спортсменов с медалями празднует победу",
+      category: "achievements",
+      title: "Командная радость",
+      description: "Яркие эмоции после успешного выступления на соревнованиях",
+    },
+    {
+      id: 27,
+      src: "/images/gallery/pole-sport-red-invert.jpg",
+      alt: "Профессиональный инверсионный элемент на пилоне",
+      category: "elements",
+      title: "Инверсия в красном",
+      description: "Сложный технический элемент требует идеальной подготовки",
+    },
+    {
+      id: 28,
+      src: "/images/gallery/training-group-white.jpg",
+      alt: "Большая группа спортсменов на тренировке в зале",
+      category: "group",
+      title: "Тренировочный процесс",
+      description: "Дружная атмосфера и командный дух на занятиях",
+    },
+    {
+      id: 29,
+      src: "/images/gallery/coach-embrace-moment.jpg",
+      alt: "Трогательный момент объятий тренера с учениками",
+      category: "team",
+      title: "Семейная атмосфера",
+      description: "Поддержка и забота - основа нашей студии",
+    },
   ]
 
   const filters = [
