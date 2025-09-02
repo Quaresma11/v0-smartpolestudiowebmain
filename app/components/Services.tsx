@@ -191,7 +191,7 @@ const Services = () => {
             <div className="space-y-16">
               {/* Пробное и разовое */}
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div className="bg-white rounded-xl p-8 border border-yellow-400/20 hover:border-yellow-400/40 transition-all group shadow-lg">
+                <div className="bg-white rounded-xl p-8 border border-yellow-400/20 hover:border-yellow-400/40 transition-all group shadow-lg flex flex-col">
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
                       <Gift className="w-6 h-6 text-black" />
@@ -201,7 +201,7 @@ const Services = () => {
                     </span>
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-yellow-400">Пробное занятие</h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-4 flex-grow">
                     Первое знакомство со студией и направлением. В подарок при покупке абонемента!
                   </p>
                   <div className="bg-orange-50 border border-orange-200 rounded-lg p-3 mb-6">
@@ -213,26 +213,26 @@ const Services = () => {
                   <div className="text-3xl font-bold text-yellow-400 mb-6">700 ₽</div>
                   <button
                     onClick={scrollToContact}
-                    className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
+                    className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 mt-auto"
                   >
                     Записаться
                   </button>
                 </div>
 
-                <div className="bg-white rounded-xl p-8 border border-yellow-400/20 hover:border-yellow-400/40 transition-all group shadow-lg">
+                <div className="bg-white rounded-xl p-8 border border-yellow-400/20 hover:border-yellow-400/40 transition-all group shadow-lg flex flex-col">
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
                       <Star className="w-6 h-6 text-black" />
                     </div>
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-yellow-400">Разовое занятие</h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 mb-6 flex-grow">
                     Отдельное занятие без привязки к абонементу. Идеально для гостей города.
                   </p>
                   <div className="text-3xl font-bold text-yellow-400 mb-6">1,400 ₽</div>
                   <button
                     onClick={scrollToContact}
-                    className="w-full bg-gradient-to-r from-yellow-400/20 to-yellow-600/10 border border-yellow-400/40 text-yellow-600 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all"
+                    className="w-full bg-gradient-to-r from-yellow-400/20 to-yellow-600/10 border border-yellow-400/40 text-yellow-600 py-3 rounded-lg font-semibold hover:bg-yellow-400 hover:text-black transition-all mt-auto"
                   >
                     Записаться
                   </button>
@@ -261,7 +261,7 @@ const Services = () => {
                   {subscriptions.map((sub, index) => (
                     <div
                       key={index}
-                      className={`bg-white rounded-xl p-8 border transition-all group shadow-lg relative ${
+                      className={`bg-white rounded-xl p-8 border transition-all group shadow-lg relative flex flex-col ${
                         sub.popular
                           ? "border-yellow-400 ring-2 ring-yellow-400/20 transform scale-105"
                           : "border-yellow-400/20 hover:border-yellow-400/40"
@@ -275,25 +275,28 @@ const Services = () => {
                         </div>
                       )}
 
-                      <div className="text-center">
+                      <div className="text-center flex flex-col h-full">
                         <h4 className="text-2xl font-bold mb-2 text-yellow-400">{sub.title}</h4>
                         <div className="text-4xl font-bold text-gray-900 mb-2">{sub.price}</div>
                         <div className="text-gray-500 mb-4">{sub.pricePerClass}</div>
 
-                        {sub.savings && (
-                          <div className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-semibold mb-4">
-                            {sub.savings}
-                          </div>
-                        )}
+                        {/* Fixed height container for savings badge */}
+                        <div className="h-8 mb-4 flex items-center justify-center">
+                          {sub.savings && (
+                            <div className="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-semibold">
+                              {sub.savings}
+                            </div>
+                          )}
+                        </div>
 
-                        <div className="flex items-center justify-center space-x-2 text-gray-600 mb-6">
+                        <div className="flex items-center justify-center space-x-2 text-gray-600 mb-6 flex-grow">
                           <Calendar className="w-4 h-4" />
                           <span className="text-sm">{sub.duration}</span>
                         </div>
 
                         <button
                           onClick={scrollToContact}
-                          className={`w-full py-3 rounded-lg font-semibold transition-all transform hover:scale-105 ${
+                          className={`w-full py-3 rounded-lg font-semibold transition-all transform hover:scale-105 mt-auto ${
                             sub.popular
                               ? "bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600"
                               : "bg-gradient-to-r from-yellow-400/20 to-yellow-600/10 border border-yellow-400/40 text-yellow-600 hover:bg-yellow-400 hover:text-black"
