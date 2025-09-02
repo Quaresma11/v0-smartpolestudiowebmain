@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, Mail, MapPin, Clock, Instagram, Navigation, Send, Play } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, Instagram, Navigation, Send, Play, Car } from "lucide-react"
 
 const Contact = () => {
   // Данные филиалов - замените на актуальные
@@ -12,6 +12,18 @@ const Contact = () => {
       metro: "м. Семеновская",
       mapUrl:
         "https://yandex.ru/maps/213/moscow/?from=mapframe&ll=37.719237%2C55.785524&mode=usermaps&source=mapframe&um=constructor%3Af07b72429ebc732cc8fd368c993724d19495bfb4a83d81501ef24e023edf1d14&utm_source=mapframe&z=16",
+      parking: [
+        {
+          type: "Городская парковка",
+          description: "Вдоль улиц Ткацкая, Вельяминовская, Измайловский вал",
+          price: "40₽/час",
+        },
+        {
+          type: "Свободная парковка",
+          description: "На закрытой территории у корпуса/подъезда",
+          price: "150₽/час",
+        },
+      ],
     },
     {
       id: "branch2",
@@ -20,6 +32,18 @@ const Contact = () => {
       metro: "м.Бульвар Рокоссовского",
       mapUrl:
         "https://yandex.ru/maps/213/moscow/?from=mapframe&ll=37.730745%2C55.816359&mode=usermaps&source=mapframe&um=constructor%3A05e053f38dc9d2ec1a824f49ada7bd3fca2bdfee52e9b3868668c2afe6f50db4&utm_source=mapframe&z=16",
+      parking: [
+        {
+          type: "Городская парковка",
+          description: "Вдоль улицы Ивантеевская",
+          price: "40₽/час",
+        },
+        {
+          type: "Бесплатная парковка во дворах у БЦ",
+          description: "Удобная парковка рядом с бизнес-центром",
+          price: "",
+        },
+      ],
     },
   ]
 
@@ -137,28 +161,65 @@ const Contact = () => {
                 <div key={location.id} className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
                   <h3 className="text-2xl font-bold mb-6 text-yellow-600">{location.name}</h3>
 
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                    <div className="flex items-start space-x-4 flex-1">
-                      <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-6 h-6 text-black" />
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {/* Адрес и навигация */}
+                    <div>
+                      <div className="flex items-start space-x-4 mb-6">
+                        <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-6 h-6 text-black" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-1 text-gray-900">Адрес</h4>
+                          <p className="text-gray-700">{location.address}</p>
+                          <p className="text-gray-500 text-sm">{location.metro}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-semibold mb-1 text-gray-900">Адрес</h4>
-                        <p className="text-gray-700">{location.address}</p>
-                        <p className="text-gray-500 text-sm">{location.metro}</p>
+
+                      <div className="flex-shrink-0">
+                        <a
+                          href={location.mapUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
+                        >
+                          <Navigation className="w-4 h-4" />
+                          <span>Как добраться</span>
+                        </a>
                       </div>
                     </div>
 
-                    <div className="flex-shrink-0">
-                      <a
-                        href={location.mapUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105"
-                      >
-                        <Navigation className="w-4 h-4" />
-                        <span>Как добраться</span>
-                      </a>
+                    {/* Парковка */}
+                    <div>
+                      <div className="flex items-start space-x-4 mb-4">
+                        <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Car className="w-6 h-6 text-black" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-3 text-gray-900">Парковка</h4>
+                          <div className="space-y-3">
+                            {location.parking.map((parkingOption, idx) => (
+                              <div key={idx} className="bg-gray-50 rounded-lg p-3">
+                                <div className="flex justify-between items-start mb-1">
+                                  <span className="font-medium text-sm text-gray-900">{parkingOption.type}</span>
+                                  {parkingOption.price && (
+                                    <span
+                                      className={`text-sm font-semibold ${
+                                        parkingOption.price === "Бесплатно" ? "text-green-600" : "text-yellow-600"
+                                      }`}
+                                    >
+                                      {parkingOption.price}
+                                    </span>
+                                  )}
+                                </div>
+                                <p className="text-xs text-gray-600 mb-1">{parkingOption.description}</p>
+                                {parkingOption.note && (
+                                  <p className="text-xs text-green-600 font-medium">{parkingOption.note}</p>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
