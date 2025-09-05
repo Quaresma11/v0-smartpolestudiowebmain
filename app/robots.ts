@@ -1,14 +1,30 @@
 import type { MetadataRoute } from "next"
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://smartpole.ru"
-
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/_next/", "/api/", "/*.json"],
-    },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/admin/", "/_next/static/"],
+      },
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        disallow: ["/api/", "/admin/"],
+      },
+      {
+        userAgent: "Yandex",
+        allow: "/",
+        disallow: ["/api/", "/admin/"],
+      },
+      {
+        userAgent: "Bingbot",
+        allow: "/",
+        disallow: ["/api/", "/admin/"],
+      },
+    ],
+    sitemap: "https://smartpolestudio.ru/sitemap.xml",
+    host: "https://smartpolestudio.ru",
   }
 }

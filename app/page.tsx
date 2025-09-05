@@ -2,26 +2,30 @@ import Header from "./components/Header"
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Directions from "./components/Directions"
-import Services from "./components/Services"
 import Trainers from "./components/Trainers"
-import Gallery from "./components/Gallery"
+import Services from "./components/Services"
 import Schedule from "./components/Schedule"
+import Gallery from "./components/Gallery"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
+import SEOOptimized from "./components/SEOOptimized"
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <>
+      <SEOOptimized />
       <Header />
-      <Hero />
-      <About />
-      <Directions />
-      <Services />
-      <Trainers />
-      <Gallery />
-      <Schedule />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Directions />
+        <Trainers />
+        <Services />
+        <Schedule />
+        <Gallery />
+        <Contact />
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }

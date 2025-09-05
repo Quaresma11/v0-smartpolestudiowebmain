@@ -80,8 +80,8 @@ const Hero = () => {
             <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/10 rounded-3xl p-8 backdrop-blur-sm border border-yellow-400/20">
               <div className="aspect-square rounded-2xl overflow-hidden">
                 <img
-                  src="/images/hero-studio.jpg"
-                  alt="Профессиональные занятия pole sport в Smart Pole Studio"
+                  src="/images/hero-pole-dancer.jpg"
+                  alt="Профессиональные занятия pole sport в Smart Pole Studio - спортсменка выполняет элемент на пилоне"
                   className="w-full h-full object-cover object-center"
                 />
               </div>

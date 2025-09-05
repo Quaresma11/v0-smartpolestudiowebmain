@@ -36,51 +36,51 @@ const Services = () => {
   const subscriptions = [
     {
       title: "5 занятий",
-      price: "5,300 ₽",
-      pricePerClass: "1,060 ₽/занятие",
+      price: "5,500 ₽",
+      pricePerClass: "1,100 ₽/занятие",
       duration: "1 месяц",
       popular: false,
       savings: "",
     },
     {
       title: "8 занятий",
-      price: "7,200 ₽",
-      pricePerClass: "900 ₽/занятие",
+      price: "7,400 ₽",
+      pricePerClass: "925 ₽/занятие",
       duration: "1 месяц",
       popular: true,
-      savings: "Экономия 400 ₽",
+      savings: "Экономия 1,400 ₽",
     },
     {
       title: "12 занятий",
-      price: "9,600 ₽",
-      pricePerClass: "800 ₽/занятие",
+      price: "9,900 ₽",
+      pricePerClass: "825 ₽/занятие",
       duration: "1 месяц",
       popular: false,
-      savings: "Экономия 1,200 ₽",
+      savings: "Экономия 3,300 ₽",
     },
     {
       title: "16 занятий",
-      price: "11,700 ₽",
-      pricePerClass: "731 ₽/занятие",
+      price: "12,100 ₽",
+      pricePerClass: "756 ₽/занятие",
       duration: "1 месяц",
       popular: false,
-      savings: "Экономия 2,700 ₽",
+      savings: "Экономия 5,500 ₽",
     },
     {
       title: "25 занятий",
-      price: "15,300 ₽",
-      pricePerClass: "612 ₽/занятие",
+      price: "15,850 ₽",
+      pricePerClass: "634 ₽/занятие",
       duration: "1 месяц",
       popular: true,
-      savings: "Экономия 6,700 ₽",
+      savings: "Экономия 11,650 ₽",
     },
     {
       title: "32 занятия",
-      price: "17,500 ₽",
-      pricePerClass: "547 ₽/занятие",
+      price: "18,100 ₽",
+      pricePerClass: "566 ₽/занятие",
       duration: "1 месяц",
       popular: false,
-      savings: "Экономия 10,300 ₽",
+      savings: "Экономия 16,700 ₽",
     },
   ]
 
@@ -95,7 +95,7 @@ const Services = () => {
       floor: "Ламинат",
       features: ["Маты", "Колонка", "Коврики и кубики", "Подсветка", "Новый ремонт"],
       pricing: {
-        weekdayBefore17: "1,200 ₽/час",
+        weekdayBefore17: "1,400 ₽/час",
         weekdayAfter17: "2,700 ₽/час",
         weekend: "2,200 ₽/час",
         equipment: "Аренда пилона: 600 ₽/час",
@@ -113,7 +113,7 @@ const Services = () => {
       pricing: {
         weekdayBefore17: "1,200 ₽/час",
         weekdayAfter17: "2,000 ₽/час",
-        weekend: "1,700 ₽/час",
+        weekend: "1,900 ₽/час",
         equipment: "Аренда подвеса: 600 ₽/час",
       },
       icon: Users,
@@ -129,7 +129,7 @@ const Services = () => {
       pricing: {
         weekdayBefore17: "1,200 ₽/час",
         weekdayAfter17: "2,000 ₽/час",
-        weekend: "1,700 ₽/час",
+        weekend: "1,900 ₽/час",
         equipment: "Аренда подвеса: 600 ₽/час",
       },
       icon: Flame,
@@ -210,7 +210,7 @@ const Services = () => {
                       <span className="text-orange-700 text-sm font-medium">100% предоплата при записи</span>
                     </div>
                   </div>
-                  <div className="text-3xl font-bold text-yellow-400 mb-6">700 ₽</div>
+                  <div className="text-3xl font-bold text-yellow-400 mb-6">750 ₽</div>
                   <button
                     onClick={scrollToContact}
                     className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all transform hover:scale-105 mt-auto"
