@@ -1,7 +1,9 @@
 "use client"
 
+import React from "react"
+
 import { useState } from "react"
-import { X, ZoomIn, Users, Star, Flame, Trophy, ChevronDown } from "lucide-react"
+import { X, ZoomIn, Users, Star, Flame, Trophy, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react"
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
@@ -268,7 +270,55 @@ const Gallery = () => {
     document.body.style.overflow = "unset"
   }
 
+  const goToPrevious = () => {
+    if (selectedImage !== null) {
+      const currentIndex = filteredImages.findIndex((img) => img.id === selectedImage)
+      if (currentIndex > 0) {
+        setSelectedImage(filteredImages[currentIndex - 1].id)
+      } else {
+        // Переходим к последнему изображению
+        setSelectedImage(filteredImages[filteredImages.length - 1].id)
+      }
+    }
+  }
+
+  const goToNext = () => {
+    if (selectedImage !== null) {
+      const currentIndex = filteredImages.findIndex((img) => img.id === selectedImage)
+      if (currentIndex < filteredImages.length - 1) {
+        setSelectedImage(filteredImages[currentIndex + 1].id)
+      } else {
+        // Переходим к первому изображению
+        setSelectedImage(filteredImages[0].id)
+      }
+    }
+  }
+
+  // Обработка клавиш
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (selectedImage !== null) {
+      if (e.key === "ArrowLeft") {
+        goToPrevious()
+      } else if (e.key === "ArrowRight") {
+        goToNext()
+      } else if (e.key === "Escape") {
+        closeModal()
+      }
+    }
+  }
+
+  // Добавляем обработчик клавиш при открытии модального окна
+  React.useEffect(() => {
+    if (selectedImage !== null) {
+      document.addEventListener("keydown", handleKeyDown)
+      return () => {
+        document.removeEventListener("keydown", handleKeyDown)
+      }
+    }
+  }, [selectedImage])
+
   const selectedImageData = selectedImage ? images.find((img) => img.id === selectedImage) : null
+  const currentImageIndex = selectedImage ? filteredImages.findIndex((img) => img.id === selectedImage) : -1
 
   return (
     <section id="gallery" className="relative py-20 bg-gray-900 text-white overflow-hidden">
@@ -355,12 +405,36 @@ const Gallery = () => {
       {selectedImage && selectedImageData && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
           <div className="relative w-full h-full flex items-center justify-center">
+            {/* Кнопка закрытия */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black hover:bg-yellow-500 transition-colors z-10"
+              className="absolute top-4 right-4 w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-black hover:bg-yellow-500 transition-colors z-20"
             >
               <X className="w-6 h-6" />
             </button>
+
+            {/* Кнопка предыдущего изображения */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-400/80 hover:bg-yellow-400 rounded-full flex items-center justify-center text-black transition-colors z-20"
+              aria-label="Предыдущее фото"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Кнопка следующего изображения */}
+            <button
+              onClick={goToNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-400/80 hover:bg-yellow-400 rounded-full flex items-center justify-center text-black transition-colors z-20"
+              aria-label="Следующее фото"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Счетчик изображений */}
+            <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2 text-white text-sm z-20">
+              {currentImageIndex + 1} из {filteredImages.length}
+            </div>
 
             <div className="relative w-full h-full flex flex-col items-center justify-center p-8">
               {/* Image container with proper scaling */}
