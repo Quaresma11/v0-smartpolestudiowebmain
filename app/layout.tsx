@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     "yandex-verification": "your-yandex-verification-code",
     "google-site-verification": "your-google-verification-code",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({

@@ -195,7 +195,7 @@ const Footer = () => {
 
               <div className="mt-6 p-4 bg-yellow-400/10 rounded-lg border border-yellow-400/20">
                 <p className="text-yellow-400 text-sm font-semibold">Режим работы:</p>
-                <p className="text-gray-400 text-sm">Пн-Вс: 9:00 - 22:00</p>
+                <p className="text-gray-400 text-sm">Пн-Вс: 10:00 - 22:00</p>
               </div>
             </div>
           </div>

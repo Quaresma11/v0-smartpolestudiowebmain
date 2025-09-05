@@ -3,7 +3,6 @@
 import { Phone, Mail, MapPin, Clock, Instagram, Navigation, Send, Play, Car } from "lucide-react"
 
 const Contact = () => {
-  // Данные филиалов - замените на актуальные
   const locations = [
     {
       id: "branch1",
@@ -73,7 +72,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold mb-1 text-gray-900">Телефон</h4>
                     <p className="text-gray-700">+7-993-366-23-68</p>
-                    <p className="text-gray-500 text-sm">Звонки принимаем с 9:00 до 22:00</p>
+                    <p className="text-gray-500 text-sm">Звонки принимаем с 10:00 до 22:00</p>
                   </div>
                 </div>
 
@@ -95,7 +94,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold mb-1 text-gray-900">Режим работы</h4>
                     <p className="text-gray-700">Понедельник - Воскресенье</p>
-                    <p className="text-gray-700">9:00 - 22:00</p>
+                    <p className="text-gray-700">10:00 - 22:00</p>
                   </div>
                 </div>
               </div>
@@ -157,7 +156,7 @@ const Contact = () => {
           {/* Информация о филиалах */}
           <div className="lg:col-span-2">
             <div className="grid gap-8">
-              {locations.map((location, index) => (
+              {locations.map((location) => (
                 <div key={location.id} className="bg-white rounded-xl p-8 border border-gray-200 shadow-lg">
                   <h3 className="text-2xl font-bold mb-6 text-yellow-600">{location.name}</h3>
 
@@ -211,10 +210,7 @@ const Contact = () => {
                                     </span>
                                   )}
                                 </div>
-                                <p className="text-xs text-gray-600 mb-1">{parkingOption.description}</p>
-                                {parkingOption.note && (
-                                  <p className="text-xs text-green-600 font-medium">{parkingOption.note}</p>
-                                )}
+                                <p className="text-xs text-gray-600">{parkingOption.description}</p>
                               </div>
                             ))}
                           </div>

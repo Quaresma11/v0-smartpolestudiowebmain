@@ -34,7 +34,7 @@ const Hero = () => {
                   <span itemProp="addressLocality">Москва</span>,
                   <span itemProp="streetAddress">ул. Спортивная, 15</span>
                 </span>
-                <span itemProp="telephone">+7 (999) 123-45-67</span>
+                <span itemProp="telephone">+7-993-366-23-68</span>
                 <span itemProp="email">info@smartpole.ru</span>
               </div>
             </div>

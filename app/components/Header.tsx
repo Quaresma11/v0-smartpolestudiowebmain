@@ -37,7 +37,7 @@ const Header = () => {
                 <span>2 филиала в Москве</span>
               </div>
             </div>
-            <div className="text-yellow-400">Работаем с 9:00 до 22:00</div>
+            <div className="text-yellow-400">Работаем с 10:00 до 22:00</div>
           </div>
 
           {/* Main header */}
